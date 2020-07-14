@@ -5,8 +5,9 @@ const si = require('systeminformation');
 
 // App setup
 let app = express();
-let server = app.listen(4000, function(){
-    console.log('listening for requests on port 4000,');
+const port = process.env.port || 4000;
+let server = app.listen(port, '0.0.0.0', () => {
+    console.log(`El servidor esta funcionando en el puerto ${port}`);
 });
 
 // Static files
